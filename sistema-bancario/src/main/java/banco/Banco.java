@@ -22,12 +22,15 @@ public class Banco {
 			}
 		}
 		
-		throw new IllegalArgumentException("Conta inexistente!");
+
+	throw new IllegalArgumentException("Conta não encontrada");
 	}
+	
 	
 	public int getTotalDeContas() {
 		return this.totalDeContas;
 	}
+	
 	
 	public void setContas(Conta[] cs) {
 		this.contas = cs;
