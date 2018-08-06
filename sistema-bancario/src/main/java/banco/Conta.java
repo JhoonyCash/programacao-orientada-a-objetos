@@ -9,6 +9,10 @@ public class Conta {
 	private double limite;
 	private static int totalDeContas; 
 	
+	public double getSaldo() {
+		return this.saldo;
+	}
+	
 	public Conta() {
 		
 	}
@@ -56,7 +60,5 @@ public class Conta {
 		return Conta.totalDeContas;
 	}
 	
-	public double getSaldo() {
-		return this.saldo;
-	}
+	
 }
