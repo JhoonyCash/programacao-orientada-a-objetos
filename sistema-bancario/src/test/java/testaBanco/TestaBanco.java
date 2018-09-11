@@ -25,8 +25,8 @@ public class TestaBanco {
 		bb.adiciona(cp);
 		bb.adiciona(cc);
 		
-		for(int x = 0; x < bb.getTotalDeContas(); x++) {
-			Conta test = bb.getConta(x);
+		for(int i = 0; i < bb.getTotalDeContas(); i++) {
+			Conta test = bb.getConta(i);
 			adc.roda(test);
 		}
 

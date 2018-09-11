@@ -9,10 +9,6 @@ public class Conta {
 	private double limite;
 	private static int totalDeContas; 
 	
-	public double getSaldo() {
-		return this.saldo;
-	}
-	
 	public Conta() {
 		
 	}
@@ -30,6 +26,13 @@ public class Conta {
 		Conta.totalDeContas++;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 	public boolean saca(double valor) {
 		if(this.saldo < valor) {
 			return false;
@@ -39,13 +42,23 @@ public class Conta {
 		}
 	}
 	
+	
 	public void deposita(double valor) {
-		this.saldo += valor;
+		
+		if (valor < 0) {
+			throw new ValorInvalidoException(valor);
+		}else{
+			this.saldo += valor;
+		}
+		
 	}
 	
+	
+	 
 	public void atualiza(double taxa) {
 		this.saldo += (this.saldo * taxa); 
 	}
+	
 	
 	public boolean transfereConta(Conta destino, double valor) {
 		if(this.saca(valor) == false) {
@@ -56,9 +69,14 @@ public class Conta {
 		}
 	}
 	
+	 
 	public static int getTotalDeConta() {
 		return Conta.totalDeContas;
 	}
 	
 	
+	
+	public double getSaldo() {
+		return this.saldo;
+	}
 }
